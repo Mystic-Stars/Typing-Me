@@ -1,0 +1,159 @@
+<html>
+    <head>
+        <title>Typing Me</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="styles.css" />
+        <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    </head>
+
+    <body>
+        <div id="failure-overlay">
+            <div data-i18n="timeUp">Time's Up!</div>
+        </div>
+        <div id="success-overlay">
+            <div data-i18n="greatJob">Great Job!</div>
+        </div>
+        <div class="container">
+            <h1 data-i18n="title">Typing Me</h1>
+            <div class="subtitle" id="subtitle" data-i18n="subtitle"></div>
+            <select id="language-select">
+                <option value="en">English</option>
+                <option value="zh">中文</option>
+                <option value="ja">日本語</option>
+            </select>
+            <div id="pinyin-display"></div>
+            <div id="text-display"></div>
+            <input
+                type="text"
+                id="input-field"
+                placeholder="Start typing here..."
+                autocomplete="off"
+            />
+            <div id="stats">
+                <div class="stat">
+                    <div class="stat-value" id="wpm">0</div>
+                    <div class="stat-label" data-i18n="wpm">WPM</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value" id="accuracy">100%</div>
+                    <div class="stat-label" data-i18n="accuracy">Accuracy</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value" id="time">60</div>
+                    <div class="stat-label" data-i18n="timeLeft">
+                        Time Left (s)
+                    </div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value" id="round">1</div>
+                    <div data-i18n="round">Round</div>
+                </div>
+            </div>
+            <div class="controls">
+                <button id="start-btn" class="btn" data-i18n="start">
+                    Start
+                </button>
+                <button id="pause-btn" class="btn" disabled data-i18n="pause">
+                    Pause
+                </button>
+                <button id="reset-btn" class="btn" data-i18n="reset">
+                    Reset
+                </button>
+            </div>
+        </div>
+        <div class="top-group">
+            <span id="status" class="status secondary">Offline</span>
+            <button id="ranks-btn" class="btn" disabled data-i18n="ranks">
+                Ranks
+            </button>
+            <button id="settings-btn" class="btn" data-i18n="settings">
+                Settings
+            </button>
+        </div>
+        <!-- Modals -->
+        <div id="settings-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 data-i18n="settings">Settings</h2>
+                <div class="setting-item">
+                    <label data-i18n="showPinyin">Show Pinyin/Romaji</label>
+                    <label class="switch">
+                        <input type="checkbox" id="show-pinyin" checked />
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="setting-item">
+                    <label data-i18n="timeLimit">Time Limit (seconds)</label>
+                    <input
+                        type="number"
+                        id="time-limit"
+                        min="30"
+                        max="300"
+                        step="30"
+                        value="60"
+                    />
+                </div>
+                <div class="setting-item">
+                    <label data-i18n="theme">Theme</label>
+                    <select id="theme-select">
+                        <option value="auto">Auto (System Default)</option>
+                        <option value="light">Light</option>
+                        <option value="dark">Dark</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div id="name-modal" class="modal">
+            <div class="modal-content">
+                <h2>Your name</h2>
+                <div class="name-item">
+                    <label for="name-field">Please enter your name</label>
+                    <input
+                        type="text"
+                        id="name-field"
+                        placeholder="Enter your name here"
+                        maxlength="24"
+                    />
+                    <div class="btn-group">
+                        <!-- Guest mode changed to offline mode -->
+                        <button id="guest-btn" class="btn">Offline Mode</button>
+                        <button id="confirm-btn" class="btn" disabled>
+                            Confirm
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rank-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 data-i18n="ranks">Ranks</h2>
+                <div class="action-bar"></div>
+                <div class="rank-table">
+                    <table id="rank-table-data">
+                        <tr class="table-header">
+                            <th id="rank-header" data-i18n="thRank">Rank</th>
+                            <th id="name-header" data-i18n="thName">Name</th>
+                            <th id="wpm-header" data-i18n="thWpm">WPM</th>
+                            <th id="text-header" data-i18n="thText">Text</th>
+                            <th id="time-header" data-i18n="thTime">Time</th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <p>
+                &copy; 2024 Typing Me. All rights reserved. Created by
+                <a
+                    href="https://github.com/Mystic-Stars"
+                    target="_blank"
+                    style="color: rgb(94, 96, 255)"
+                    >Mystic Stars</a
+                >.
+            </p>
+        </footer>
+        <script src="script.js"></script>
+    </body>
+</html>

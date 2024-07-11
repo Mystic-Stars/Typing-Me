@@ -2,6 +2,8 @@
 
 English | [中文](https://github.com/Mystic-Stars/Typing-Me/blob/main/README.md)
 
+> This version needs server-side support. Static deployment is not avaliable.
+
 Typing Me is a modern online typing practice program designed to help users improve their typing speed and accuracy.
 
 ![](https://bu.dusays.com/2024/07/10/668e75c2466c2.png)
@@ -16,15 +18,20 @@ Typing Me is a modern online typing practice program designed to help users impr
   - Adjust time limit
   - Theme selection (Auto/Light/Dark)
 
-## Development Guide
+## Install
 
-This application is a pure frontend application built using HTML, CSS, and JavaScript, which can run directly in the browser without the need for a backend server.
+```bash
+npm install -g yarn
+yarn
+```
 
-### Deploying on Vercel
+## Launch
 
-The [Vercel platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) provides a simple and easy-to-use Serverless deployment solution.
-
-If you are an individual developer, I recommend deploying this project on Vercel.
+```bash
+$ yarn start
+# Or use PM2
+$ pm2 start ./server.js --name "Typing-me"
+```
 
 ## Contributing
 

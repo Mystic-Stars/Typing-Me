@@ -1,0 +1,17 @@
+{
+    "name": "typing-me-server",
+    "version": "1.0.0",
+    "description": "Server-side for Typing Me",
+    "main": "server.js",
+    "author": "bcmray",
+    "license": "MIT",
+    "scripts": {
+        "start": "node server.js"
+    },
+    "dependencies": {
+        "@fastify/static": "^7.0.4",
+        "fastify": "^4.28.1",
+        "knex": "^3.1.0",
+        "sqlite3": "^5.1.7"
+    }
+}
